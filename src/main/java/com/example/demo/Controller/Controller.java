@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class Controller {
-    @GetMapping("/index")
+    @GetMapping("/")
     public String TrangChu() {
         return "Xin chào việt nam! tôi là Trần Chí Hiếu";
     }
