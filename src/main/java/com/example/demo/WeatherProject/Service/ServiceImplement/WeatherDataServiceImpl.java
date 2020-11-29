@@ -47,4 +47,9 @@ public class WeatherDataServiceImpl implements WeatherDataService {
     public List<WeatherData> getAllWeatherData() {
         return weatherDataRepository.findAll();
     }
+
+    @Override
+    public void resetSEQUENCE() {
+        weatherDataRepository.resetSEQUENCE();
+    }
 }

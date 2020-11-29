@@ -23,7 +23,7 @@ public class GetValueWeather {
     @Autowired
     private LocalServiceImpl localServiceImpl;
     @Autowired
-    WeatherDataServiceImpl weatherDataServiceImpl;
+    private WeatherDataServiceImpl weatherDataServiceImpl;
 
     private static String readAll(Reader rd) throws IOException {
         StringBuilder sb = new StringBuilder();
@@ -45,11 +45,23 @@ public class GetValueWeather {
     @Async
     @Scheduled(fixedDelay = 10800000)
     @Transactional
-    public void test() throws IOException {
+    public void setValue() throws IOException {
         List<Local> listLocal = localServiceImpl.getAllLocal();
         for (Local local : listLocal) {
             weatherDataServiceImpl.deleteAllValueOfLocal(local.getCode());
             setDataWeatherToDB(local);
+        }
+    }
+
+    @Async
+    @Scheduled(fixedDelay = 202400008)
+    public void resetId() {
+        try{
+            Thread.sleep(600000);
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }finally {
+            weatherDataServiceImpl.resetSEQUENCE();
         }
     }
 

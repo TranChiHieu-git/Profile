@@ -19,4 +19,6 @@ public interface WeatherDataService {
     List<WeatherData> getWeatherDataByCityCode(int id);
 
     List<WeatherData> getAllWeatherData();
+
+    void resetSEQUENCE();
 }
