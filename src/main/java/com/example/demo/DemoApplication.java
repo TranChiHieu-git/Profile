@@ -10,6 +10,9 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler;
 @EnableScheduling
 @SpringBootApplication
 public class DemoApplication {
+    public DemoApplication() {
+    }
+
     public static void main(String[] args) {
         SpringApplication.run(DemoApplication.class, args);
     }

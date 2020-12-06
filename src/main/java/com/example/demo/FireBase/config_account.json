@@ -1,0 +1,12 @@
+{
+  "firebaseConfig": {
+    "apiKey": "AIzaSyBXlTiR6TJPAVxORhOyN-VF-fnmKbg5tSg",
+    "authDomain": "store-tranchihieu.firebaseapp.com",
+    "databaseURL": "https://store-tranchihieu.firebaseio.com",
+    "projectId": "store-tranchihieu",
+    "storageBucket": "store-tranchihieu.appspot.com",
+    "messagingSenderId": "495811446974",
+    "appId": "1:495811446974:web:5fc526a24227a2d1d4f6ef",
+    "measurementId": "G-W6NX6Q1034"
+  }
+}

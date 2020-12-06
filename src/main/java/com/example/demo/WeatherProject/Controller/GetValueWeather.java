@@ -51,16 +51,11 @@ public class GetValueWeather {
             weatherDataServiceImpl.deleteAllValueOfLocal(local.getCode());
             setDataWeatherToDB(local);
         }
-    }
-
-    @Async
-    @Scheduled(fixedDelay = 202400008)
-    public void resetId() {
-        try{
+        try {
             Thread.sleep(600000);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e.getMessage());
-        }finally {
+        } finally {
             weatherDataServiceImpl.resetSEQUENCE();
         }
     }
