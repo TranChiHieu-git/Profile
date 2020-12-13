@@ -44,7 +44,7 @@ public class GetValueWeather {
     }
 
     @Async
-    @Scheduled(fixedDelay = 10800000)
+    @Scheduled(fixedDelay = 90000000)
     @Transactional
     public void setValue() throws IOException {
         List<Local> listLocal = localServiceImpl.getAllLocal();
@@ -53,15 +53,15 @@ public class GetValueWeather {
             setDataWeatherToDB(local);
         }
         count++;
-        if (count == 5) {
+        System.out.println(count);
+        if (count == 4) {
             try {
-                Thread.sleep(6000000);
+                weatherDataServiceImpl.resetSEQUENCE();
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             } finally {
-                weatherDataServiceImpl.resetSEQUENCE();
+                count = 0;
             }
-            count = 0;
         }
     }
 
