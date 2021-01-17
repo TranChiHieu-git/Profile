@@ -24,7 +24,6 @@ public class GetValueWeather {
     private LocalServiceImpl localServiceImpl;
     @Autowired
     private WeatherDataServiceImpl weatherDataServiceImpl;
-//    private int count = 0;
 
     private static String readAll(Reader rd) throws IOException {
         StringBuilder sb = new StringBuilder();
@@ -52,17 +51,6 @@ public class GetValueWeather {
             weatherDataServiceImpl.deleteAllValueOfLocal(local.getCode());
             setDataWeatherToDB(local);
         }
-//        count++;
-//        System.out.println(count);
-//        if (count == 4) {
-//            try {
-//                weatherDataServiceImpl.resetSEQUENCE();
-//            } catch (Exception e) {
-//                System.out.println(e.getMessage());
-//            } finally {
-//                count = 0;
-//            }
-//        }
     }
 
     public void setDataWeatherToDB(Local local) throws IOException {

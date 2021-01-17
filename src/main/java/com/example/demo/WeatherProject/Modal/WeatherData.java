@@ -1,6 +1,7 @@
 package com.example.demo.WeatherProject.Modal;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 
 @Entity
 @Table(name = "weather_data")
@@ -8,7 +9,7 @@ public class WeatherData {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private BigDecimal id;
     @Column(name = "time_weather")
     private String timeWeather;
     @Column(name = "temp")

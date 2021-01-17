@@ -48,8 +48,4 @@ public class WeatherDataServiceImpl implements WeatherDataService {
         return weatherDataRepository.findAll();
     }
 
-    @Override
-    public void resetSEQUENCE() {
-        weatherDataRepository.resetSEQUENCE();
-    }
 }
