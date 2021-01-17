@@ -8,7 +8,7 @@ import java.math.BigDecimal;
 public class WeatherData {
     @Id
     @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private BigDecimal id;
     @Column(name = "time_weather")
     private String timeWeather;
