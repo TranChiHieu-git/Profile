@@ -7,6 +7,7 @@ import com.example.demo.WeatherProject.Service.ServiceImplement.WeatherDataServi
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "*", maxAge = 120000)
 public class WeatherController {
     @Autowired
     WeatherDataServiceImpl weatherDataServiceImpl;
@@ -24,7 +26,7 @@ public class WeatherController {
     public ResponseEntity<List<Local>> LocalData() {
         List<Local> listLocal = localServiceImpl.getAllLocal();
         return listLocal.isEmpty() ?
-                new ResponseEntity<>(HttpStatus.NO_CONTENT) :
+                new ResponseEntity<>(HttpStatus.OK) :
                 new ResponseEntity<>(listLocal, HttpStatus.OK);
     }
 

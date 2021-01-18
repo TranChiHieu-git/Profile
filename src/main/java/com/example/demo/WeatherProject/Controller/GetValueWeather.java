@@ -43,7 +43,7 @@ public class GetValueWeather {
     }
 
     @Async
-    @Scheduled(fixedDelay = 90000000)
+    @Scheduled(fixedDelay = 86400000)
     @Transactional
     public void setValue() throws IOException {
         List<Local> listLocal = localServiceImpl.getAllLocal();
