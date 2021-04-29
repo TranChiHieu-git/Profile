@@ -57,6 +57,7 @@ public class GetValueWeather {
         JSONObject weather = readJsonFromUrl("http://api.openweathermap.org/data/2.5/forecast?id=" + local.getCode() + "&appid=21f64a715eae4e2931cc32d254f65bbc&lang=vi&units=metric");
         JSONArray array = weather.getJSONArray("list");
         for (int i = 0; i < array.length(); i++) {
+            System.out.println(array);
             weatherDataServiceImpl.save(new WeatherData(
                     array.getJSONObject(i).getString("dt_txt"),
                     array.getJSONObject(i).getJSONObject("main").getFloat("temp"),
